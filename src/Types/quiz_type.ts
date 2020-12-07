@@ -13,3 +13,7 @@ export type Quiz_type = {
     answer:string
     options:string[]
 }
+export type QuestionPropsType = {
+    question:string
+    options:string[]
+}

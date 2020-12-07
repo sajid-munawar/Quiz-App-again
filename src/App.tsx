@@ -1,7 +1,8 @@
 import React, { useEffect,useState } from 'react';
 import './App.css';
 import getQuiz from "./Services/quiz_service";
-import {Quiz_type} from "./Types/quiz_type"
+import {Quiz_type} from "./Types/quiz_type";
+import QuizCard from './Components/quiz_card'
 
 
 function App() {
@@ -20,7 +21,10 @@ function App() {
   console.log(quiz)
   return (
     <div className="App">
-      <h1>Hello</h1>
+      <QuizCard
+      question={quiz[0].question}
+      options={quiz[0].options}
+      />
     </div>
   );
 }
