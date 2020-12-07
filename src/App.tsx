@@ -7,6 +7,9 @@ import QuizCard from './Components/quiz_card'
 
 function App() {
   let [quiz,setQuiz]=useState<Quiz_type[]>([])
+  let [currentQuiz,setCurrentQuiz]=useState(0)
+
+
   useEffect(()=>{
     async function getQuestion (){
       const data:Quiz_type[]=await getQuiz();
@@ -15,6 +18,13 @@ function App() {
     }
     getQuestion()
   },[])
+  const handleSubmit =((e:React.FormEvent<EventTarget>)=>{
+    e.preventDefault();
+    setCurrentQuiz(++currentQuiz)
+
+  })
+
+
   if(!quiz.length){
     return <h1>Loading...</h1>
   }
@@ -22,8 +32,9 @@ function App() {
   return (
     <div className="App">
       <QuizCard
-      question={quiz[0].question}
-      options={quiz[0].options}
+      question={quiz[currentQuiz].question}
+      options={quiz[currentQuiz].options}
+      callback={handleSubmit}
       />
     </div>
   );

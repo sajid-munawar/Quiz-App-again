@@ -16,4 +16,5 @@ export type Quiz_type = {
 export type QuestionPropsType = {
     question:string
     options:string[]
+    callback:(e:React.FormEvent<EventTarget>)=>void
 }
