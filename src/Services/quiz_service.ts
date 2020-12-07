@@ -7,7 +7,8 @@ async function getQuiz(): Promise<Quiz_type[]>{
         return {
             question:resultObj.question,
             answer:resultObj.correct_answer,
-            options:resultObj.incorrect_answers.concat(resultObj.correct_answer)
+            options:resultObj.incorrect_answers.concat(resultObj.correct_answer),
+            correctAns:resultObj.correct_answer
         }
     })
     return quiz

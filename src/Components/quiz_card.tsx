@@ -1,23 +1,33 @@
-import React, { FC } from 'react';
+import React, { FC, useState } from 'react';
 import { QuestionPropsType } from "./../Types/quiz_type"
 
 const QuizCard: FC<QuestionPropsType> = (({ question, options,callback }) => {
-    return <div>
+    let [selected,setSelected]=useState("")
+        const userselected=((ev:any)=>{
+            setSelected(ev.target.value)
+
+        })
+
+
+   return <div>
         <h1>{question} </h1>
-        <form>
+        <form onSubmit={(ev:React.FormEvent<EventTarget>)=>callback(ev,selected)}>
 
             {options.map((opt: string, ind: number) => {
                 return <div  key={ind}>
-                    <label>
+                <label>
                          <input
                         type="radio"
                         name="opt"
                         value={opt}
+                        required
+                        onChange={userselected}
+                        checked={opt===selected}
                     /> {opt}
-                    </label>
+            </label>
                 </div>
             })}
-            <input type="submit" onClick={callback}/>
+            <input type="submit"/>
         </form>
 
     </div>
