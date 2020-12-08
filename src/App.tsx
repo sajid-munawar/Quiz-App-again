@@ -39,7 +39,9 @@ function App() {
     return <h1>Loading...</h1>
   }
   if (complete) {
-    return <h1>{score}</h1>
+    return<div className="score">
+      <h1>Score : {score}</h1>
+      </div>
   }
   console.log(quiz[currentQuiz].correctAns)
 
