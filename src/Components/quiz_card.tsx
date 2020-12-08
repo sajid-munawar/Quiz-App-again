@@ -16,7 +16,7 @@ const QuizCard: FC<QuestionPropsType> = (({ question, options,callback }) => {
             {options.map((opt: string, ind: number) => {
                 return <div  key={ind}>
                 <select>
-                         <input
+                         <option
                         // type="radio"
                         name="opt"
                         value={opt}
