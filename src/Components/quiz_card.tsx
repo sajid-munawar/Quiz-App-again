@@ -22,7 +22,7 @@ const QuizCard: FC<QuestionPropsType> = (({ question, options,callback }) => {
                         value={opt}
                         // required
                         onChange={userselected}
-                        checked={opt===selected}
+                        // checked={opt===selected}
                     /> {opt}
             </select>
                 </div>
