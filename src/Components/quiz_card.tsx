@@ -29,7 +29,7 @@ const QuizCard: FC<QuestionPropsType> = (({ question, options,callback }) => {
             })}
             <input type="submit"/>
         </form>
-        <div
+        <div></div>
 
     </div>
 
