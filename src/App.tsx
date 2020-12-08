@@ -41,6 +41,8 @@ function App() {
   if (complete) {
     return <h1>{score}</h1>
   }
+  console.log(quiz[currentQuiz].correctAns)
+
   // console.log(quiz)
   return (
     <div className="App">

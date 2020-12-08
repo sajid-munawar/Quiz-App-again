@@ -17,7 +17,7 @@ const QuizCard: FC<QuestionPropsType> = (({ question, options,callback }) => {
                 return <div  key={ind}>
                 <label>
                          <input
-                        type="radio"
+                        // type="radio"
                         name="opt"
                         value={opt}
                         required
