@@ -46,6 +46,7 @@ function App() {
   // console.log(quiz)
   return (
     <div className="App">
+      <h3>Your current score is {score}</h3>
       <QuizCard
         question={quiz[currentQuiz].question}
         options={quiz[currentQuiz].options}

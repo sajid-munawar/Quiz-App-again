@@ -15,21 +15,20 @@ const QuizCard: FC<QuestionPropsType> = (({ question, options,callback }) => {
 
             {options.map((opt: string, ind: number) => {
                 return <div  key={ind}>
-                <select>
-                         <option
-                        // type="radio"
-                        // name="opt"
+                <label>
+                         <input
+                        type="radio"
+                        name="opt"
                         value={opt}
-                        // required
+                        required
                         onChange={userselected}
-                        // checked={opt===selected}
-                    > {opt} </option>
-            </select>
+                        checked={opt===selected}
+                    /> {opt}
+            </label>
                 </div>
             })}
             <input type="submit"/>
         </form>
-        <div></div>
 
     </div>
 
